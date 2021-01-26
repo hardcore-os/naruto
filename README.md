@@ -1,2 +1,3 @@
-# naruto
-高性能的c++日志库
+# kangaroo
+🦘Kangaroo is a CXX adaptor to Prometheus
+
