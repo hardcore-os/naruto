@@ -1,17 +1,11 @@
-#ifndef KANGAROON_INLCUDE_FILE_WRITER_H_
-#define KANGAROON_INLCUDE_FILE_WRITER_H_
+#ifndef NARUTO_INLCUDE_FILE_WRITER_H_
+#define NARUTO_INLCUDE_FILE_WRITER_H_
 #include <stdint.h>
-namespace zoo
-{
-    namespace kangaroo
-    {
-        enum class FileWriterType : uint8_t{
-            MMAPFILE = 0,
-            APPENDFILE
-        };
-    } // namespace kangaroo
-    
-} // namespace zoo
+namespace hardcode {
+namespace naruto {
+enum class FileWriterType : uint8_t { MMAPFILE = 0, APPENDFILE };
+} // namespace naruto
 
+} // namespace hardcode
 
 #endif

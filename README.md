@@ -1,3 +1,3 @@
-# kangaroo
-🦘Kangaroo is a CXX adaptor to Prometheus
+# naruto
+naruto is a CXX adaptor to Prometheus
 

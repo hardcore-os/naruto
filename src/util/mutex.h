@@ -1,38 +1,33 @@
-#ifndef KANGAROON_UTIL_MUTEX_H_
-#define KANGAROON_UTIL_MUTEX_H_
+#ifndef NARUTO_UTIL_MUTEX_H_
+#define NARUTO_UTIL_MUTEX_H_
 #include <pthread.h>
-namespace zoo {
-namespace kangaroo {
+namespace hardcode {
+namespace naruto {
 class Mutex {
-   public:
-    Mutex() {
-        pthread_mutex_init(&mutex_, NULL);
-    }
-    ~Mutex() {
-        pthread_mutex_destroy(&mutex_);
-    }
+public:
+  Mutex() { pthread_mutex_init(&mutex_, NULL); }
+  ~Mutex() { pthread_mutex_destroy(&mutex_); }
 
-    void lock();
-    void unlock();
+  void lock();
+  void unlock();
 
-    pthread_mutex_t* getMutex() {
-        return &mutex_;
-    }
-   private:
-    pthread_mutex_t mutex_;
+  pthread_mutex_t *getMutex() { return &mutex_; }
+
+private:
+  pthread_mutex_t mutex_;
 };
 
 class MutexGuard {
-   public:
-    MutexGuard(Mutex& mutex);
-    ~MutexGuard();
+public:
+  MutexGuard(Mutex &mutex);
+  ~MutexGuard();
 
-   private:
-    Mutex& mutex_;
+private:
+  Mutex &mutex_;
 };
 
-}  // namespace kangaroo
+} // namespace naruto
 
-}  // namespace zoo
+} // namespace hardcode
 
 #endif

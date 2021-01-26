@@ -1,28 +1,29 @@
-#ifndef KANGAROON_UTIL_CONDITION_H_
-#define KANGAROON_UTIL_CONDITION_H_
+#ifndef NARUTO_UTIL_CONDITION_H_
+#define NARUTO_UTIL_CONDITION_H_
 #include <pthread.h>
 #include <stdint.h>
+
 #include "mutex.h"
-namespace zoo {
+namespace hardcode {
 
-namespace kangaroo {
+namespace naruto {
 class Condition {
-   public:
-    explicit Condition(Mutex& mutex);
-    ~Condition();
+public:
+  explicit Condition(Mutex &mutex);
+  ~Condition();
 
-    void wait();
-    bool waitForSeconds(int32_t seconds);
-    void notifyOne();
-    void notifyAll();
+  void wait();
+  bool waitForSeconds(int32_t seconds);
+  void notifyOne();
+  void notifyAll();
 
-   private:
-    Mutex& mutex_;
-    pthread_cond_t condvar_;
+private:
+  Mutex &mutex_;
+  pthread_cond_t condvar_;
 };
 
-}  // namespace kangaroo
+} // namespace naruto
 
-}  // namespace zoo
+} // namespace hardcode
 
 #endif

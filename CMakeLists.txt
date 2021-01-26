@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.0)
 
-project(kangaroo)
+project(naruto)
 
 set(CXX_FLAGS
  -O2

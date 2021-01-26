@@ -1,19 +1,19 @@
-#ifndef KANGAROON_LOG_APPENDER_INTERFACE_H_
-#define KANGAROON_LOG_APPENDER_INTERFACE_H_
+#ifndef NARUTO_LOG_APPENDER_INTERFACE_H_
+#define NARUTO_LOG_APPENDER_INTERFACE_H_
 #include <memory>
 
-namespace zoo {
-namespace kangaroo {
+namespace hardcode {
+namespace naruto {
 class LogAppenderInterface {
-   public:
-    using Ptr = std::shared_ptr<LogAppenderInterface>;
+public:
+  using Ptr = std::shared_ptr<LogAppenderInterface>;
 
-   public:
-    virtual ~LogAppenderInterface() {}
-    virtual void append(const char* msg, size_t len) = 0;
+public:
+  virtual ~LogAppenderInterface() {}
+  virtual void append(const char *msg, size_t len) = 0;
 };
-}  // namespace kangaroo
+} // namespace naruto
 
-}  // namespace zoo
+} // namespace hardcode
 
 #endif
