@@ -45,6 +45,10 @@ SET(LIBRARY_OUTPUT_PATH ${PROJECT_BINARY_DIR}/libs)
 add_subdirectory(src)
 add_subdirectory(test)
 
+# add google test lib 
+add_subdirectory(third_party/googletest)
+enable_testing()
+include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
 
 message(STATUS "CMAKE_CXX_FLAGS=" "${CMAKE_CXX_FLAGS}")
 

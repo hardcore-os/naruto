@@ -132,6 +132,11 @@ void Logger::writeLog(LogLevel log_level, const char *file_name,
   prefix.append("-");
   prefix.append(std::to_string(line_num) + "-");
   prefix.append(str_result);
+  while (!functors_.empty()) {
+     Task task = std::move(functors_.front());
+     functors_.pop_front();
+     task();
+  }
   MutexGuard guard(mutex_);
   for (const auto &appender : appenders_) {
     appender.second->append(prefix.data(), prefix.size());

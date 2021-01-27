@@ -27,7 +27,8 @@ public:
     if (fd_ < 0) {
       fprintf(stderr, "open new file failed,errno=%d", errno);
     } else {
-      ftruncate(fd_, mem_size);
+      int n = ftruncate(fd_, mem_size);
+      (void)n;
       buffer_ = (char *)mmap(NULL, mem_size_, PROT_READ | PROT_WRITE,
                              MAP_SHARED, fd_, 0);
       if (buffer_ == MAP_FAILED) {
